@@ -1,0 +1,123 @@
+header{
+  display: flex;
+  width: 100%;
+  background-color: $headerbackcol;
+  padding: 14px 10px;
+  align-items: center;
+  color: $fontcolprime;
+  grid-area: head;
+  @media screen and (min-width: $mqmdbreak) {
+    padding: 20px 30px;
+  }
+  h1 {
+    margin: 0px;
+    font-weight: 300;
+    font-size: 1.3em;
+    strong{
+      font-weight: 700;
+    }
+    sup{
+      font-size: .25em;
+      font-weight: 300;
+    }
+    @media screen and (min-width: $mqmdbreak) {
+      font-size: 2em;
+    }
+  }
+  .right{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: auto;
+  }
+  .bell-ic{
+    width: 30px;
+    height: 31px;
+    margin-right: 10px;
+    position: relative;
+    @media screen and (min-width: $mqmdbreak) {
+      width: 40px;
+      height: 41px;
+      margin-right: 34px;
+    }
+    .naughtify{
+      position: absolute;
+      right: 0px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #81C98F;
+    }
+  }
+  img{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    margin-left: 10px;
+    @media screen and (min-width: $mqmdbreak) {
+      width: 60px;
+      height: 60px;
+      margin-left: 34px;
+    }
+  }
+  h2{
+    margin: 0 0 0 10px;
+    font-weight: 300;
+    font-size: .9em;
+    @media screen and (min-width: $mqmdbreak) {
+      font-size: 1.3em;
+    }
+  }
+  .vertical-line{
+   width: 2px;
+   height: 50px;
+   background-color: $bordercolor;
+  }
+}
+
+.notey-box{
+  display: none;
+  padding: 0px;
+  max-width: 420px;
+  margin-top:23px;
+  margin-bottom: 0px;
+  list-style-type: none;
+  display: block;
+  border-radius: 0px 0px 8px 8px;
+  background-color: rgb(116, 119, 191, .9);
+  z-index: 100;
+  &:hover{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+  }
+  li{
+    padding: 10px;
+    @include borderbottom();
+    &:hover{
+      background-color: rgb(116, 119, 191, .9);
+    }
+  }
+}
+
+.bell-ic{
+  transform-origin: top center;
+  cursor: pointer;;
+  &:hover .bell{
+    animation-name: ring;
+    animation-duration: 4s;
+  }
+}
+
+@keyframes ring {
+  0%   {transform: rotate(35deg);}
+  10%   {transform: rotate(-35deg);}
+  20%   {transform: rotate(30deg);}
+  30%   {transform: rotate(-30deg);}
+  40%   {transform: rotate(25deg);}
+  50%   {transform: rotate(-25deg);}
+  60%   {transform: rotate(20deg);}
+  70%   {transform: rotate(-20deg);}
+  80%   {transform: rotate(15deg);}
+  100%   {transform: rotate(0deg);}
+}

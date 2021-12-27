@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+html{
+  width: 100%;
+}
+
+body{
+  font-family: $fontfamily;
+  width: 100%;
+  // font-size: 1.3em;
+  // @media (min-width: $mqmdbreak) {
+  //   font-size: 1.2em;
+  // }
+}
+
+
+
+.stroke-color{
+  fill: $fontcolprime;
+}

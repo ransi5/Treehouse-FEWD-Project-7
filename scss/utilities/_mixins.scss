@@ -1,0 +1,22 @@
+@mixin borderbottom(){
+  border-bottom: 2px solid $bordercolor;
+}
+
+@mixin initialSetup(){
+  margin: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@mixin form(){
+  padding: 20px 20px;
+  border-radius: 8px;
+  margin-top: 25px;
+}
+
+@mixin hover(){
+  border: 3px solid $headerbackcol;
+  outline: none;
+  box-shadow: 0 4px 8px 4px $backcolor;
+}

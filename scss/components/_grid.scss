@@ -1,0 +1,22 @@
+body{
+  display: grid;
+  grid-template-columns: 10% 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'head head'
+    'nav nav'
+    'main main';
+  @media screen and (min-width: $mqmdbreak) {
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      'head head'
+      'nav main'
+  }
+  @media screen and (min-width: $mqlgbreak) {
+    grid-template-columns: 7% 1fr;
+  }
+}
+
+main{
+  grid-area: main;
+}

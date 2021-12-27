@@ -1,0 +1,75 @@
+#message{
+  @include initialSetup;
+  @include borderbottom;
+  font-size: 1em;
+  @media screen and (min-width: $mqlgbreak) {
+    max-width: 50%;
+    float: left;
+    clear: left;
+    margin: 0px;
+    padding:  0px 20px 20px;
+    margin-bottom: 30px;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    input{
+      @include form;
+      width: 100%;
+      border: 2px solid $bordercolor;
+      background-color: $backcolor;
+      &:hover, &:focus{
+        @include hover;
+      }
+    }
+    #resultbox{
+      display: block;
+      flex-direction: column;
+      position: absolute;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      height: auto;
+      background-color: $backcolor;
+      list-style-type: none;
+      border-left:2px solid $headerbackcol;
+      border-right: 2px solid $headerbackcol;
+      border-bottom: 2px solid $headerbackcol;
+      li{
+        height: 100%;
+        font-size: 1em;
+        width: 90%;
+        padding: 10px 10px;
+        transition: .5s;
+        &:not(:last-child){
+          @include borderbottom;
+        }
+        &:hover{
+          background-color: $headerbackcol;
+          color: white;
+          transform: scale(1.1);
+          transform-origin: left;
+          cursor: pointer;
+        }
+      }
+    }
+    textarea{
+      @include form;
+      border: 2px solid $bordercolor;
+      background-color: $backcolor;
+      // aspect-ratio: 16/9;
+      &:hover, &:focus{
+      @include hover;
+      }
+    }
+    button{
+      background-color: $headerbackcol;
+      border:  none;
+      margin-bottom: 40px;
+      color: $fontcolprime;
+      @include form;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+#new-member{
+  @include initialSetup();
+  @media screen and (min-width: $mqlgbreak) {
+    float: left;
+    clear: both;
+    margin: 0px;
+    padding:  0px 20px 20px;
+    width: 50%;
+  }
+  .member{
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    @include borderbottom();
+    @media screen and (min-width: $mqmdbreak) {
+      text-align: left;
+      min-height: 177px;
+      display: grid;
+      grid-template-columns: 20% 1fr 15%;
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-areas:
+      "pic .    .   "
+      "pic name  date"
+      "pic link  date"
+      "pic .     .   ";
+    }
+    img{
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+      @media screen and (min-width: $mqmdbreak) {
+        grid-area: pic;
+        margin: auto;
+      }
+      @media screen and (min-width: $mqlgbreak) {
+        width: 100%
+      }
+    }
+    a{
+      text-decoration: none;
+      @media screen and (min-width: $mqmdbreak) {
+        grid-area: link;
+        margin-left: 20px;
+      }
+    }
+    p:not(.date){
+      margin: 0px;
+      margin-top:  20px;
+      @media screen and (min-width: $mqmdbreak) {
+        margin-left: 20px;
+        margin-top: auto;
+      }
+    }
+    .date{
+      margin: 0px;
+      @media screen and (min-width: $mqmdbreak) {
+        margin: auto;
+      }
+    }
+  }
+}
+#notty-acts{
+  @include initialSetup();
+  @media screen and (min-width: $mqlgbreak) {
+    margin: 0px;
+    padding:  0px 20px 20px;
+  }
+  .member{
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    @include borderbottom();
+    @media screen and (min-width: $mqmdbreak) {
+      text-align: left;
+      display: grid;
+      grid-template-columns: 20% 1fr 5%;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-areas:
+      "picer .     .   "
+      "picer comy  peon"
+      "picer time  peon"
+      "picer .     .   ";
+    }
+    @media screen and (min-width: $mqlgbreak) {
+      height: 177px;
+    }
+    img{
+      border-radius: 50%;
+      @media screen and (min-width: $mqmdbreak) {
+        grid-area: picer;
+        margin: auto;
+      }
+      @media screen and (min-width: $mqlgbreak) {
+        width: 100%
+      }
+    }
+    p{
+      margin: 0px;
+      @media screen and (min-width: $mqmdbreak) {
+        margin-left: 20px;
+      }
+    }
+    .comment{
+      margin-top:auto;
+    }
+    .notnotty{
+      display: none;
+      @media screen and (min-width: $mqmdbreak) {
+        display: flex;
+        grid-area: peon;
+        align-self: center;
+        margin-left: 50%;
+        color: $headerbackcol;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $mqmdbreak) {
+  .name{
+    grid-area: name;
+  }
+  .date{
+    grid-area: date;
+    margin: auto;
+  }
+  .comment{
+    grid-area: comy;
+  }
+  .timer{
+    grid-area: time;
+    margin-bottom: auto;
+  }
+}

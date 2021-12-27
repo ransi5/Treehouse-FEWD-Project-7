@@ -1,0 +1,62 @@
+#social-stats{
+  @include initialSetup();
+  @include borderbottom();
+  padding-bottom: 20px;
+  @media screen and (min-width: $mqmdbreak) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+  }
+  h2{
+    font-size: 1em;
+    @media screen and (min-width: $mqmdbreak) {
+      flex: 4 100%;
+      min-width: 100%;
+    }
+  }
+}
+
+.social{
+  display: flex;
+  width: 100%;
+  border: 2px solid $bordercolor;
+  background-color: $backcolor;
+  padding: 10px;
+  margin-top: 20px;
+  @media screen and (min-width: $mqmdbreak) {
+    flex: 1 33%;
+    max-width: 32%;
+  }
+  .logo{
+    width: 33.34%;
+    padding-top: 33.34%;
+    position: relative;
+    background-color: $headerbackcol;
+    border-radius: 50%;
+    .social-logo{
+      position: absolute;
+      top: 25%;
+      left:25%;
+      width: 50%;
+      fill: $fontcolprime;
+    }
+  }
+  .stat{
+    flex-grow: 1;
+    margin: auto;
+    h3{
+      margin: 5px;
+      padding-left: 15%;
+      color: $headerbackcol;
+      font-size: 1em;
+      font-weight: 800;
+    }
+    h1{
+      margin: 5px;
+      padding-left: 15%;
+      color: $statfontcolor;
+      font-size: 2em;
+      font-weight:300;
+    }
+  }
+}
