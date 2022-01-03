@@ -73,3 +73,18 @@
     }
   }
 }
+
+.hide{
+  display: none;
+}
+.success{
+  display: inline-block;
+  color: #81C98F;
+  margin: 0px;
+}
+
+.error{
+  display: inline-block;
+  color: red;
+  margin: 0px;;
+}

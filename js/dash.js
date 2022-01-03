@@ -373,5 +373,76 @@ function setResultboxposition() {
   let bottom = top + height + 'px';
   let left = search.offsetLeft + 'px';
    return [resultbox.style.top = top, resultbox.style.top = bottom];
+}
 
+function setStorage(event) {
+  event.preventDefault();
+  let mailer = document.getElementById('mailer');
+  let profile = document.getElementById('profile');
+  let timezee = document.getElementById('timezee');
+
+  if (mailer.checked == true) {
+    localStorage.setItem("email", true);
+  } else {
+    localStorage.setItem("email", false);
+  }
+  if (profile.checked == true) {
+    localStorage.setItem("profile", true);
+  } else {
+    localStorage.setItem("profile", false);
+  }
+  if (timezee.options[timezee.selectedIndex].value != '') {
+    localStorage.setItem("timezone", timezee.options[timezee.selectedIndex].value);
+  } else {
+    localStorage.setItem("timezone", "");
+  }
+  console.log(localStorage.email);
+  console.log(localStorage.profile);
+  console.log(localStorage.timezone);
+}
+
+function clearStorage(event) {
+  event.preventDefault();
+  localStorage.removeItem("email");
+  localStorage.removeItem("profile");
+  localStorage.removeItem("timezone");
+}
+
+function setSetting() {
+  let mailer = document.getElementById('mailer');
+  let profile = document.getElementById('profile');
+
+  mailer.checked = localStorage.email;
+  profile.checked = localStorage.profile
+}
+
+function checkMessage(event) {
+  event.preventDefault();
+  let receptor = document.getElementById('user').value;
+  let message = document.getElementById('messenger').value;
+  let response = document.getElementById('response');
+  if (response.innerHTML != '') {
+    response.innerHTML = '';
+  }
+  if (receptor === ''){
+    response.innerHTML += " Please enter a receipient."
+    if (response.classList.contains('error') === false) {
+      response.className = '';
+      response.className = 'error';
+    }
+  }
+  if (message === '') {
+    response.innerHTML += "<br> Please enter a message."
+    if (response.classList.contains('error') === false) {
+      response.className = '';
+      response.className = 'error';
+    }
+  }
+  if (receptor != '' && message != '') {
+    response.textContent += "Message Sent"
+    if (response.classList.contains('success') === false) {
+      response.className = '';
+      response.className = 'success';
+    }
+  }
 }

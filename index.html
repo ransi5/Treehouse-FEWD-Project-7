@@ -129,32 +129,33 @@
       </div>
       <section id="message">
         <h2>MESSAGE USER</h2>
-        <form class="message" action="index.html" method="post">
-          <input id="user" type="text" name="user" value="" placeholder="Search for User" required>
+        <form class="message" method="get">
+          <p id="response" class="hide"></p>
+          <input id="user" type="text" name="user" value="" placeholder="Search for User">
           <textarea id="messenger" name="message" rows="6" cols="80"></textarea>
-          <button type="submit" name="submit">Send</button>
+          <button name="submit" onclick="checkMessage(event)">Send</button>
         </form>
       </section>
       <section id="settings">
         <h2>Settings</h2>
-        <form class="" action="index.html" method="post">
+        <form class="" method="get">
           <fieldset id="swicher">
           <p>Send Email Notifications</p>
           <label class="switch">
-            <input type="checkbox">
+            <input id="mailer" type="checkbox">
             <span class="slider"></span>
           </label>
           <p>Set profile to public</p>
           <label class="switch">
-            <input type="checkbox" checked>
+            <input id="profile" type="checkbox">
             <span class="slider"></span>
           </label>
           </fieldset>
           <fieldset id="finale">
             <div id="timezone">
               <span class="arrow">&lt;</span>
-              <select class="timezone" name="Galaxy">
-                <<option value="">Select timezone</option>
+              <select id="timezee" class="timezone" name="Galaxy">
+                <option value="">Select timezone</option>
                 <option timeZoneId="1" gmtAdjustment="GMT-12:00" useDaylightTime="0" value="-12">(GMT-12:00) International Date Line West</option>
               	<option timeZoneId="2" gmtAdjustment="GMT-11:00" useDaylightTime="0" value="-11">(GMT-11:00) Midway Island, Samoa</option>
               	<option timeZoneId="3" gmtAdjustment="GMT-10:00" useDaylightTime="0" value="-10">(GMT-10:00) Hawaii</option>
@@ -239,12 +240,15 @@
               	<option timeZoneId="82" gmtAdjustment="GMT+13:00" useDaylightTime="0" value="13">(GMT+13:00) Nuku'alofa</option>
               </select>
             </div>
-            <button class="save"  type="submit" name="button">Save</button>
-            <button class="cancel" type="submit" name="button">Cancel</button>
+            <button class="save"  onclick="setStorage(event)" name="button">Save</button>
+            <button class="cancel" onclick="clearStorage(event)" name="button">Cancel</button>
           </fieldset>
         </form>
       </section>
     </main>
     <script src="js/dash.js"></script>
+    <script type="text/javascript">
+      setSetting();
+    </script>
   </body>
 </html>
