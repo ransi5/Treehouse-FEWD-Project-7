@@ -105,6 +105,9 @@
         border: 2px solid $bordercolor;
         background-color: $backcolor;
         position: relative;
+        &:hover{
+          cursor: pointer;
+        }
         .timezone{
           background: transparent;
           border: none;
@@ -128,6 +131,9 @@
         color: $fontcolprime;
         padding: 20px 20px;
         border-radius: 8px;
+        &:hover{
+          cursor: pointer;
+        }
       }
       .save{
         background-color: $headerbackcol;

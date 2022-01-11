@@ -70,6 +70,9 @@
       color: $fontcolprime;
       @include form;
       width: 100%;
+      &:hover{
+        cursor: pointer;
+      }
     }
   }
 }

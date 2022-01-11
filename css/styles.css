@@ -1019,6 +1019,9 @@ nav .nav-item {
   margin-top: 25px;
   width: 100%;
 }
+#message form button:hover {
+  cursor: pointer;
+}
 
 .hide {
   display: none;
@@ -1149,6 +1152,9 @@ nav .nav-item {
   background-color: #F5F5F5;
   position: relative;
 }
+#settings form #finale #timezone:hover {
+  cursor: pointer;
+}
 #settings form #finale #timezone .timezone {
   background: transparent;
   border: none;
@@ -1171,6 +1177,9 @@ nav .nav-item {
   color: white;
   padding: 20px 20px;
   border-radius: 8px;
+}
+#settings form #finale button:hover {
+  cursor: pointer;
 }
 #settings form #finale .save {
   background-color: #7477BF;
