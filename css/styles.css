@@ -1090,6 +1090,8 @@ nav .nav-item {
 #settings form #swicher .switch input {
   position: absolute;
   opacity: 0;
+  width: 100%;
+  height: 100%;
 }
 #settings form #swicher .switch input:checked + .slider {
   background-color: #7477BF;

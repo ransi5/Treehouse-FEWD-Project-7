@@ -28,6 +28,8 @@ const memberinfo = [
 let noteys = ['Congratulations!!! you have been Elected President of USA', 'Victoria and Dawn are very interested in you!!!', 'Congratulations, you are the most popular life form in multiverse!!!'];
 let noofnoteys = 1;
 
+window.addEventListener('load', (event) => {getStorage(event)}, false);
+
 lineChart(trafficHourly, trafficHourlyData);
 
 btn.addEventListener('click', (event)=>{
@@ -396,9 +398,33 @@ function setStorage(event) {
   } else {
     localStorage.setItem("timezone", "");
   }
-  console.log(localStorage.email);
-  console.log(localStorage.profile);
-  console.log(localStorage.timezone);
+  console.log(localStorage.getItem("email"));
+  console.log(localStorage.getItem("profile"));
+  console.log(localStorage.getItem("timezone"));
+}
+
+function getStorage(event) {
+
+  let maile = document.getElementById('mailer');
+  let profil = document.getElementById('profile');
+  let timeze = document.getElementById('timezee');
+
+  if (localStorage.getItem("email") != null) {
+    maile.checked = JSON.parse(localStorage.getItem("email"));
+  }
+  if (localStorage.getItem("profile") != null) {
+    profil.checked = JSON.parse(localStorage.getItem("profile"));
+  }
+  if (localStorage.getItem("timezone") != null) {
+    for (var i = 0; i < timeze.length; i++) {
+      if (timeze.options[i].value == localStorage.getItem("timezone")) {
+        timeze.selectedIndex = i;
+      }
+    }
+  }
+  console.log(localStorage.getItem("email"));
+  console.log(localStorage.getItem("profile"));
+  console.log(localStorage.getItem("timezone"));
 }
 
 function clearStorage(event) {
