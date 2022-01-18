@@ -398,9 +398,6 @@ function setStorage(event) {
   } else {
     localStorage.setItem("timezone", "");
   }
-  console.log(localStorage.getItem("email"));
-  console.log(localStorage.getItem("profile"));
-  console.log(localStorage.getItem("timezone"));
 }
 
 function getStorage(event) {
@@ -422,9 +419,6 @@ function getStorage(event) {
       }
     }
   }
-  console.log(localStorage.getItem("email"));
-  console.log(localStorage.getItem("profile"));
-  console.log(localStorage.getItem("timezone"));
 }
 
 function clearStorage(event) {
@@ -432,6 +426,14 @@ function clearStorage(event) {
   localStorage.removeItem("email");
   localStorage.removeItem("profile");
   localStorage.removeItem("timezone");
+  
+  maile = document.getElementById('mailer');
+  profil = document.getElementById('profile');
+  timeze = document.getElementById('timezee');
+
+  maile.checked = false;
+  profil.checked = false;
+  timeze.selectedIndex = 0;
 }
 
 function setSetting() {
